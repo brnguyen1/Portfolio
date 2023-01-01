@@ -47,7 +47,7 @@ export default {
 
 <template>
     <div id="projects" class="flex w-full grid grid-cols-1 divide-y h-screen
-     bg-tan">
+     bg-tan my-auto">
         <div class="ml-20 mt-10 border-none">
             <h1 class="text-light-orange text-3xl">P R O J E C T S</h1>
             <div class="bg-light-orange w-28 h-1 mx-1 mt-10" />
@@ -55,7 +55,7 @@ export default {
         </div>
 
         <div class="flex flex-wrap bg-light-brown border-none w-full h-96 my-auto -mt-12">
-            <div class="flex flex-wrap bg-tan h-full md:w-72 w-60 ml-10 md:ml-32">
+            <div class="flex flex-wrap bg-tan h-full md:w-72 w-1/3 ml-10 md:ml-32">
                 <div class="flex h-4/6 border border-2 w-full mx-auto items-center">
                     <img :src="(current_project.picture as string)" class="h-full w-full object-scale-down" />
                 </div>
@@ -80,7 +80,7 @@ export default {
                     <div class="bg-dark-blue w-10 h-1 my-4" />
                     <p class="text-sm">{{ current_project.description }}</p>
                 </div>
-                <div class="flex justify-start w-full">
+                <div class="flex justify-start w-full my-auto">
                     <a :href="(current_project.link as string)">
                         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->

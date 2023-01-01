@@ -64,11 +64,11 @@ export default {
 </script>
 
 <template>
-    <div id="skills" class="flex flex-wrap bg-tan w-full h-fit md:h-screen">
-        <div class="w-full h-fit text-center">
-            <h1 class="text-dark-blue text-3xl">S K I L L S</h1>
+    <div id="skills" class="block my-auto bg-tan w-full h-max md:py-60 lg:py-20">
+        <div class="w-full text-center">
+            <h1 class="my-auto text-dark-blue text-3xl">S K I L L S</h1>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 grid-cols-1 w-full h-4/6 my-4 md:-mt-20">
+        <div class="grid md:grid-cols-3 gap-8 grid-cols-1 w-full h-max">
             <Card header="Languages" :skills="languages" />
             <Card header="Web Development" :skills="frameworks" />
             <Card header="Technical" :skills="technical" />

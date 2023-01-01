@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-    <div class="grid grid-cols-1 border drop-shadow-sm justify-items-start w-4/6 md:h-full h-max m-auto rounded-xl">
-        <div class="text-center w-full mx-auto my-2">
+    <div class="grid grid-cols-1 my-10 border justify-items-start w-4/6 md:h-full h-max mx-auto rounded-xl">
+        <div class="text-center w-full mx-auto my-auto">
             {{ header }}
         </div>
         <div v-for="skill in skills" class="flex border rounded-xl h-max w-5/6 my-2 mx-auto">
