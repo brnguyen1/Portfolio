@@ -16,7 +16,7 @@ let portfolio: Project = {
     picture: portfolio_pic,
     technologies: ["Vue.js", "TailwindCSS"],
     description: "This is the web application that you are currently seeing. I developed this web application with inspiration from many sources for design",
-    link: "#"
+    link: "https://github.com/brnguyen1/Portfolio"
 }
 
 let spotitube: Project = {
@@ -55,16 +55,16 @@ export default {
         </div>
 
         <div class="flex flex-wrap bg-light-brown border-none w-full h-96 my-auto -mt-12">
-            <div class="flex flex-wrap bg-tan h-full w-72 ml-10 md:ml-32">
-                <div class="flex h-4/6 border border-2 w-full  mx-auto items-center">
+            <div class="flex flex-wrap bg-tan h-full md:w-72 w-60 ml-10 md:ml-32">
+                <div class="flex h-4/6 border border-2 w-full mx-auto items-center">
                     <img :src="current_project.picture" class="h-full w-full object-scale-down" />
                 </div>
                 <div class="flex h-max w-full justify-center mb-auto">
                     <template v-for="(project, index) in projects">
                         <div v-if="project == current_project"
-                            class="w-5 h-5 mx-4 rounded-xl border-light-brown bg-light-brown"
+                            class="w-5 h-5 mx-4 rounded-xl border-light-brown bg-light-brown cursor-pointer"
                             @click="changeProject(index)" />
-                        <div v-else class="w-5 h-5 mx-4 rounded-xl border border-light-brown bg-tan"
+                        <div v-else class="w-5 h-5 mx-4 rounded-xl border border-light-brown bg-tan cursor-pointer"
                             @click="changeProject(index)" />
                     </template>
                 </div>

@@ -26,3 +26,8 @@ type Project = {
     description: String,
     link: String,
 }
+
+type Skill = {
+    picture: String | null,
+    name: String,
+}

@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="bg-dark-blue block text-tan w-full h-4/6 ml-auto ">
+    <div class="bg-dark-blue block text-tan w-full h-4/6 ml-auto rounded-b-lg">
         <div class="m-3 min-h-5/7">
             <div class="text-light-orange text-lg">
                 <h1>{{ job.employer.toUpperCase() }}</h1>
