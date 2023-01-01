@@ -57,7 +57,7 @@ export default {
         <div class="flex flex-wrap bg-light-brown border-none w-full h-96 my-auto -mt-12">
             <div class="flex flex-wrap bg-tan h-full md:w-72 w-60 ml-10 md:ml-32">
                 <div class="flex h-4/6 border border-2 w-full mx-auto items-center">
-                    <img :src="current_project.picture" class="h-full w-full object-scale-down" />
+                    <img :src="(current_project.picture as string)" class="h-full w-full object-scale-down" />
                 </div>
                 <div class="flex h-max w-full justify-center mb-auto">
                     <template v-for="(project, index) in projects">
@@ -81,7 +81,7 @@ export default {
                     <p class="text-sm">{{ current_project.description }}</p>
                 </div>
                 <div class="flex justify-start w-full">
-                    <a :href="current_project.link">
+                    <a :href="(current_project.link as string)">
                         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path fill="gray"

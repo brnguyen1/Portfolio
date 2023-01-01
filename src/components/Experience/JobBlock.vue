@@ -28,7 +28,7 @@ export default defineComponent({
         </div>
         <div class="m-3 h-max">
             Contributions:
-            <ul class="my-3 text-sm md:text-base" v-for="contribution in job.contributions" :key="contribution">
+            <ul class="my-3 text-sm md:text-base" v-for="contribution in job.contributions">
                 {{ contribution }}
             </ul>
         </div>

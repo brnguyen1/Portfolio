@@ -16,7 +16,7 @@ export default {
         </div>
         <div v-for="skill in skills" class="flex border rounded-xl h-max w-5/6 my-2 mx-auto">
             <div class="w-16 h-16 border border-y-0 border-l-0 border-right-4 rounded-l-xl">
-                <img v-if="skill.picture" :src="skill.picture" class="w-full h-full object-contain"/>
+                <img v-if="skill.picture" :src="(skill.picture as string)" class="w-full h-full object-contain"/>
             </div>
             <div class="h-fit w-fit my-auto mr-auto ml-5 text-sm md:text-lg">{{ skill.name }}</div>
         </div>
