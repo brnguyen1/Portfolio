@@ -31,3 +31,5 @@ type Skill = {
     picture: String | null,
     name: String,
 }
+
+type Nullable<T> = T | null

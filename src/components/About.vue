@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-    <div id="about" class="flex fixed -z-10 h-screen w-full mt-auto">
+    <div id="about" class="flex bg-light-brown fixed -z-10 h-screen w-full mt-auto">
         <div class=" absolute h-max top-10 right-10">
 
             <Transition name="title" appear>

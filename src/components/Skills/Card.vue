@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="grid grid-cols-1 my-10 border justify-items-start w-4/6 md:h-full h-max mx-auto rounded-xl">
+    <div class="grid grid-cols-1 border justify-items-start w-4/6 md:h-full h-max mx-auto rounded-xl">
         <div class="text-center w-full mx-auto my-auto">
             {{ header }}
         </div>

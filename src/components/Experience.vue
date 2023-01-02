@@ -1,4 +1,5 @@
 <script lang="ts">
+import { isMobile } from '../static/js/isMobile'
 import JobBlock from './Experience/JobBlock.vue'
 import JobTimeline from './Experience/JobTimeline.vue'
 import SchoolBlock from './Experience/SchoolBlock.vue'
@@ -63,19 +64,50 @@ export default {
 
             jobs: [student_tech, fidelity_intern, innov_apprentice],
             schools: [tamu, acc],
-            current_job: student_tech,
-            current_school: tamu,
+            current_job: null as Nullable<Job>,
+            current_school: null as Nullable<Education>,
+            show_job_timeline: true,
+            show_school_timeline: false,
             view_type: "experience"
         }
     },
     methods: {
+        isMobile,
         changeView() {
             if (this.view_type == "experience") {
                 this.view_type = "education";
+
             }
             else {
                 this.view_type = "experience";
             }
+            this.jobTimelineCheck();
+            this.schoolTimelineCheck();
+        },
+        jobTimelineCheck() {
+            if ((this.view_type === 'experience' && !isMobile()) || (this.view_type == 'experience' && !this.current_job)) {
+                this.show_job_timeline = true
+            }
+            else {
+                this.show_job_timeline = false
+            }
+
+        },
+        schoolTimelineCheck() {
+            if ((this.view_type === 'education' && !isMobile()) || (this.view_type === 'education' && !this.current_school)) {
+                this.show_school_timeline = true
+            }
+            else {
+                this.show_school_timeline = false
+            }
+        },
+        changeJob(new_job) {
+            this.current_job = new_job;
+            this.jobTimelineCheck();
+        },
+        changeSchool(new_school) {
+            this.current_school = new_school;
+            this.schoolTimelineCheck();
         }
     },
     components: {
@@ -83,15 +115,32 @@ export default {
         JobTimeline,
         SchoolBlock,
         SchoolTimeline,
+    },
+    created() {
+        if (!isMobile()) {
+            this.current_job = this.jobs[0];
+            this.current_school = this.schools[0];
+        }
+
+        window.addEventListener("resize", () => {
+            this.jobTimelineCheck();
+            this.schoolTimelineCheck();
+            if (!isMobile()) {
+                if(!this.current_job)
+                    this.current_job = this.jobs[0];
+                if(!this.current_school)
+                    this.current_school = this.schools[0];
+            }
+        });
     }
 }
 </script>
 
 <template>
-    <div id="experience" class="mt-landing flex h-screen bg-tan">
-        <div class="flex flex-wrap w-1/2 md:w-2/6">
+    <div id="experience" class="mt-landing flex flex-wrap md:flex-nowrap h-max pb-10 md:h-screen bg-tan">
+        <div class="flex flex-wrap w-full md:w-2/6">
             <!-------------------- Section Title -------------------->
-            <div class="text-light-orange text-4xl text-bold m-1 h-max w-full">
+            <div class="text-light-orange text-3xl text-bold m-1 h-max w-full">
                 <h1 v-if="view_type === 'experience'">E X P E R I E N C E</h1>
                 <h1 v-else>E D U C A T I O N</h1>
                 <div class="bg-light-orange w-28 h-1 mx-1 mt-10" />
@@ -99,29 +148,30 @@ export default {
 
             <!-------------------- Timelines -------------------->
             <!-- Experience -->
-            <div class="h-5/6 ml-10 md:mx-auto">
-                <JobTimeline v-if="view_type === 'experience'" :current_job="current_job" :jobs="jobs"
-                    @changejob="current_job = $event" />
+            <div v-if="show_job_timeline || show_school_timeline" class="h-screen md:h-5/6 mx-auto md:block">
+                <JobTimeline v-if="show_job_timeline" :current_job="current_job" :jobs="jobs"
+                    @changejob="changeJob($event)" />
 
                 <!-- Education -->
-                <SchoolTimeline v-if="view_type === 'education'" :current_school="current_school" :schools="schools"
-                    @changeschool="current_school = $event" />
+                <SchoolTimeline v-if="show_school_timeline" :current_school="current_school" :schools="schools"
+                    @changeschool="changeSchool($event)" />
             </div>
         </div>
 
         <!-------------------- Info div -------------------->
 
-        <div class="flex flex-wrap w-1/2 mr-2 md:mx-auto">
+        <div class="flex flex-wrap w-full h-screen mt-10 md:h-full md:my-auto md:w-1/2 md:mx-auto">
             <!-- Experience -->
-            <JobBlock v-if="view_type === 'experience'" :job="current_job" />
+            <JobBlock v-if="view_type === 'experience' && current_job" :job="current_job"
+                @removejob="changeJob($event)" />
 
             <!-- Education -->
-            <SchoolBlock v-if="view_type === 'education'" :education="current_school" />
+            <SchoolBlock v-if="view_type === 'education' && current_school" :education="current_school" @removeschool="changeSchool($event)"/>
 
             <!-- Switch view button -->
-            <button class="mx-auto h-fit w-fit" @click="changeView()">
+            <button class="mx-auto mb-auto h-fit w-fit" @click="changeView()">
                 <div :class="[view_type === 'experience' ? 'bg-tan text-brown' : 'bg-brown text-white']"
-                    class="px-1 flex border border-2 border-brown place-items-center w-max h-12 rounded-lg">
+                    class=" flex border text-sm md:text-base border-2 border-brown rounded-lg place-items-center w-max h-12 px-1">
                     <p v-if="view_type === 'experience'"> Show education timeline</p>
                     <p v-else>Show experience timeline</p>
 

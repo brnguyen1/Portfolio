@@ -23,6 +23,9 @@ import scrum from '../assets/technical/clipboard.svg'
 import leader from '../assets/technical/leader.svg'
 import tshoot from '../assets/technical/mag-glass.svg'
 
+// resume
+import resume from '../public/resume.pdf'
+
 let languages: Array<Skill> = [
     { name: "Python", picture: python },
     { name: "C++", picture: c },
@@ -55,6 +58,7 @@ export default {
             languages: languages,
             frameworks: frameworks,
             technical: technical,
+            resume: resume
         }
     },
     components: {
@@ -64,14 +68,19 @@ export default {
 </script>
 
 <template>
-    <div id="skills" class="block my-auto bg-tan w-full h-max md:py-60 lg:py-20">
-        <div class="w-full text-center">
-            <h1 class="my-auto text-dark-blue text-3xl">S K I L L S</h1>
+    <div id="skills" class="flex flex-wrap bg-tan w-full h-max pt-20 pb-10">
+        <div class="w-full h-max text-center my-auto">
+            <h1 class="text-dark-blue text-3xl">S K I L L S</h1>
         </div>
-        <div class="grid md:grid-cols-3 gap-8 grid-cols-1 w-full h-max">
+        <div class="grid md:grid-cols-3 gap-8 grid-cols-1 w-full h-max my-10">
             <Card header="Languages" :skills="languages" />
             <Card header="Web Development" :skills="frameworks" />
             <Card header="Technical" :skills="technical" />
+        </div>
+        <div class="flex h-max w-full mt-auto">
+            <div class="m-auto w-max h-max border border-2 border-light-orange text-light-orange rounded-2xl p-2">
+                <a :href="resume">Download my resume</a>
+            </div>
         </div>
     </div>
 </template>

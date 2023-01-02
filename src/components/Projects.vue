@@ -46,22 +46,22 @@ export default {
 </script>
 
 <template>
-    <div id="projects" class="flex w-full grid grid-cols-1 divide-y h-screen
-     bg-tan my-auto">
-        <div class="ml-20 mt-10 border-none">
+    <div id="projects" class="flex flex-wrap w-full h-max h-screen
+     bg-tan">
+        <div class="ml-20">
             <h1 class="text-light-orange text-3xl">P R O J E C T S</h1>
             <div class="bg-light-orange w-28 h-1 mx-1 mt-10" />
             <p class="mt-10">These are the projects that I have completed...</p>
         </div>
 
-        <div class="flex flex-wrap bg-light-brown border-none w-full h-96 my-auto -mt-12">
-            <div class="flex flex-wrap bg-tan h-full md:w-72 w-1/3 ml-10 md:ml-32">
-                <div class="flex h-4/6 border border-2 w-full mx-auto items-center">
-                    <img :src="(current_project.picture as string)" class="h-full w-full object-scale-down" />
+        <div class="flex flex-wrap md:flex-row bg-light-brown w-full h-screen my-auto mt-4 md:h-96">
+            <div class="flex flex-wrap bg-tan w-full h-1/3 my-10 md:my-0 md:h-full md:w-72 md:ml-32">
+                <div class="flex h-4/6 border w-full mx-auto items-center">
+                    <img :src="(current_project.picture as string)" class="h-full w-full object-contain" />
                 </div>
                 <div class="flex h-max w-full justify-center mb-auto">
                     <template v-for="(project, index) in projects">
-                        <div v-if="project == current_project"
+                        <div v-if="project === current_project"
                             class="w-5 h-5 mx-4 rounded-xl border-light-brown bg-light-brown cursor-pointer"
                             @click="changeProject(index)" />
                         <div v-else class="w-5 h-5 mx-4 rounded-xl border border-light-brown bg-tan cursor-pointer"
@@ -70,8 +70,8 @@ export default {
                 </div>
             </div>
 
-            <div class="flex flex-wrap w-1/2 h-full mx-auto ml-2">
-                <div class="h-4/6 w-full">
+            <div class="flex flex-wrap ml-2 h-80 mb-auto mx-auto md:w-1/2 md:h-full ">
+                <div class="h-5/6 w-full">
                     <h1 class="font-bold">{{ current_project.name }}</h1>
                     <span v-for="(tech, index) in current_project.technologies">
                         <p class="inline italic">{{ tech }}</p>
@@ -80,7 +80,7 @@ export default {
                     <div class="bg-dark-blue w-10 h-1 my-4" />
                     <p class="text-sm">{{ current_project.description }}</p>
                 </div>
-                <div class="flex justify-start w-full my-auto">
+                <div class="justify-start w-full my-auto">
                     <a :href="(current_project.link as string)">
                         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                             <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
