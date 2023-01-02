@@ -148,7 +148,7 @@ export default {
 
             <!-------------------- Timelines -------------------->
             <!-- Experience -->
-            <div v-if="show_job_timeline || show_school_timeline" class="h-screen md:h-5/6 mx-auto md:block">
+            <div v-if="show_job_timeline || show_school_timeline" class="h-screen ml-40 md:mx-auto  md:h-5/6 md:block">
                 <JobTimeline v-if="show_job_timeline" :current_job="current_job" :jobs="jobs"
                     @changejob="changeJob($event)" />
 
