@@ -25,7 +25,7 @@ type Project = {
     technologies: Array<String>,
     description: String,
     link: String,
-    yt_link: String,
+    yt_link: String | null,
 }
 
 type Skill = {
