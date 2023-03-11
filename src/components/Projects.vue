@@ -9,7 +9,7 @@ let revs: Project = {
     technologies: ["React.js", "Express.js", "PostgreSQL"],
     description: "Two-in-one solution featuring a kiosk view and point of sale system for Rev's American grill. Customers are able to place orders which will populate a queue which employees will be able to complete. SMS feature is integrated so that when customers place an order they will be notified when their order is created and completed. Manager dashboard features dynamic data tables which can easily be implemented by calling the entity name.",
     link: "https://github.com/brnguyen1/revs-web-app",
-    yt_link = null
+    yt_link: null
 }
 
 let portfolio: Project = {
