@@ -26,15 +26,6 @@ export default {
             end_date: "Current"
         }
 
-        let fidelity_intern: Job = {
-            title: "Data Engineering Intern",
-            picture: null,
-            employer: "Fidelity Investments",
-            contributions: ["Upcoming"],
-            start_date: "Jun 2023",
-            end_date: "Aug 2023"
-        }
-
         // EDUCATION
         let tamu: Education = {
             school: "Texas A&M University",
