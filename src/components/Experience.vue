@@ -53,7 +53,7 @@ export default {
 
         return {
 
-            jobs: [student_tech, fidelity_intern, innov_apprentice],
+            jobs: [student_tech, innov_apprentice],
             schools: [tamu, acc],
             current_job: null as Nullable<Job>,
             current_school: null as Nullable<Education>,
