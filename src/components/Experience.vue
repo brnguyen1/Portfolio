@@ -8,6 +8,15 @@ import SchoolTimeline from './Experience/SchoolTimeline.vue'
 export default {
     data() {
         // JOBS
+        let aa_intern: Job = {
+            title: "Software Engineering Intern",
+            picture: null,
+            employer: "American Airlines",
+            contributions: ["Worked in team to maintain application that processes and verifies integrity of 1,000,000+ bookings daily using Spring", "Followed agile methodology to meet business needs and create necessary user stories to support application health", "Identified and successfully aggregated decentralized production and stage logs with flow of over 100 GB/month using Mezmo and NiFi to enhance overall system monitoring capabilities across 7 servers"],
+            start_date: "May 2023",
+            end_date: "Aug 2023"
+        }
+
         let innov_apprentice: Job = {
             title: "Innovation Apprentice",
             picture: null,
@@ -23,7 +32,7 @@ export default {
             employer: "Texas A&M University",
             contributions: ["Troubleshoot computer systems and accessory devices", "Track and manage IT inventory to deliver equipment to customers just in time", "Verify quotes and receive incoming ordered items"],
             start_date: "Jun 2022",
-            end_date: "Current"
+            end_date: "May 2023"
         }
 
         // EDUCATION
@@ -31,11 +40,11 @@ export default {
             school: "Texas A&M University",
             picture: null,
             degree: "Bachelor of Science - Computer Engineering",
-            gpa: "3.62",
+            gpa: "3.48",
             start_date: "Aug 2019",
             end_date: "Dec 2023",
-            courses: ["Programming Studio", "Machine Learning", "Robotics & Spatial Intelligence", "Data Structures & Algorithms", "Microcomputer Systems"],
-            description: "I'm a senior at Texas A&M University currently pursuing a B.S. in Computer Engineering with an emphasis on data applications and information systems. I have had the opportunity to lead an Agile project (Rev's American Grill Web Application) as the project manager and SCRUM master. I have been blessed with the opportunity develop my technical skills as well as leadership skills during my time at Texas A&M University.",
+            courses: ["Machine Learning", "Robotics & Spatial Intelligence", "Distributed Systems", "Machine Learning", "Information Storage & Retrieval"],
+            description: "I am a senior at Texas A&M University currently pursuing a B.S. in Computer Engineering with an interest in distributed systems infrastructure to support ML/AI models. Through my coursework, I have had the opportunity to lead an Agile project (Rev's American Grill Web Application) as the project manager and SCRUM master. I have also had the opportunity to develop technical skills in my interest of distributed systems, learning to support big data models and creating ML models.",
             graduated: false
         }
 
@@ -53,7 +62,7 @@ export default {
 
         return {
 
-            jobs: [student_tech, innov_apprentice],
+            jobs: [aa_intern, student_tech, innov_apprentice],
             schools: [tamu, acc],
             current_job: null as Nullable<Job>,
             current_school: null as Nullable<Education>,

@@ -75,7 +75,7 @@ export default {
         <div class="grid md:grid-cols-3 gap-8 grid-cols-1 w-full h-max my-10">
             <Card header="Languages" :skills="languages" />
             <Card header="Web Development" :skills="frameworks" />
-            <Card header="Technical" :skills="technical" />
+            <Card header="Other" :skills="technical" />
         </div>
         <div class="flex h-max w-full mt-auto">
             <div class="m-auto w-max h-max border border-2 border-light-orange text-light-orange rounded-2xl p-2">

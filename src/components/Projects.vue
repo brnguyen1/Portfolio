@@ -54,7 +54,6 @@ export default {
         <div class="ml-20">
             <h1 class="text-light-orange text-3xl">P R O J E C T S</h1>
             <div class="bg-light-orange w-28 h-1 mx-1 mt-10" />
-            <p class="mt-10">These are the projects that I have completed...</p>
         </div>
 
         <div class="flex flex-wrap md:flex-row bg-light-brown w-full h-screen my-auto mt-4 md:h-96">
