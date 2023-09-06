@@ -14,6 +14,8 @@ import vue_icon from '../assets/frameworks/vue.svg'
 import tcss from '../assets/frameworks/tailwindcss.svg'
 import njs from '../assets/frameworks/nodejs.svg'
 import django from '../assets/frameworks/django.svg'
+import grpc from '../assets/frameworks/grpc.svg'
+import spring from '../assets/frameworks/spring.svg'
 
 // technical icons
 import full_dev from '../assets/technical/server.svg'
@@ -32,7 +34,7 @@ let languages: Array<Skill> = [
     { name: "JavaScript", picture: javascript },
     { name: "Java", picture: java },
     { name: "PostgreSQL", picture: psql },
-    { name: "MongoDB", picture: mdb }
+    { name: "MongoDB", picture: mdb },
 ]
 
 let frameworks: Array<Skill> = [
@@ -40,7 +42,9 @@ let frameworks: Array<Skill> = [
     { name: "Vue.js", picture: vue_icon },
     { name: "Tailwind CSS", picture: tcss },
     { name: "Node.js", picture: njs },
-    { name: "Django", picture: django }
+    { name: "Django", picture: django },
+    { name: "gRPC", picture: grpc},
+    { name: "Spring", picture: spring }
 ]
 
 let technical: Array<Skill> = [
